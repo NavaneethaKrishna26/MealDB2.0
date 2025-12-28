@@ -1,0 +1,206 @@
+/* ===== Global Reset & Variables ===== */
+:root {
+  --primary-color: #f97316;       /* Orange 500 */
+  --primary-hover: #ea580c;       /* Orange 600 */
+  --danger: #dc2626;
+  --warning: #f59e0b;
+  --bg-body: #fff7ed;             /* Soft orange background */
+  --bg-card: #ffffff;
+  --text-main: #3b1d0f;           /* Warm dark brown */
+  --text-muted: #7c4a2d;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 
+               0 4px 6px -2px rgba(0,0,0,0.06);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* ===== App Container ===== */
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===== Title ===== */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: -0.025em;
+  background: linear-gradient(
+    to right,
+    #f97316,
+    #fb923c
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Filter Bar ===== */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #fed7aa;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #fed7aa;
+  background-color: #fffaf5;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-bar input::placeholder {
+  color: #9a3412;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
+}
+
+/* ===== Clear Button ===== */
+.filter-bar button {
+  background-color: #ffedd5;
+  color: #9a3412;
+  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-bar button:hover {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+/* ===== Meal List ===== */
+.meal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ===== Meal Card ===== */
+.meal-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #ffedd5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(249,115,22,0.25);
+}
+
+/* ===== Meal Image ===== */
+.meal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.meal-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Meal Text Container ===== */
+.meal-card h3,
+.meal-card p,
+.meal-card .favorite-btn {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.meal-card h3 {
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #7c2d12;
+}
+
+.meal-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* ===== Favorite Button ===== */
+.favorite-btn {
+  margin-top: auto;
+  margin-bottom: 15px !important;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.favorite-btn.add {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: white;
+}
+
+.favorite-btn.remove {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+
+.favorite-btn:hover {
+  filter: brightness(1.05);
+}
+
+.favorite-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== No Results ===== */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  border: 1px dashed #fdba74;
+}
