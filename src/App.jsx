@@ -128,7 +128,7 @@ function App() {
   
   return (
     <div className="app-container">
-      <h1>🍽️ Meal Finder 2.0 Updated</h1>
+      <h1>🍽️ Meal Finder Updated</h1>
 
       <FilterBar
         searchText={searchText}
