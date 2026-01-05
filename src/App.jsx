@@ -124,11 +124,10 @@ function App() {
 
     setFilteredMeals(result);
   }, [searchText, category, area, difficulty, sortType, meals]);
-
   
   return (
     <div className="app-container">
-      <h1>🍽️ Meal Finder</h1>
+      <h1>🍽️ Meal Finder App</h1>
 
       <FilterBar
         searchText={searchText}
