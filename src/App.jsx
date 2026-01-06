@@ -82,13 +82,11 @@ function App() {
     if (searchText) {
       result = result.filter(meal => {
         const text = searchText.toLowerCase();
-
         if (
           meal.strMeal.toLowerCase().includes(text) ||
           meal.strCategory.toLowerCase().includes(text) ||
           meal.strArea.toLowerCase().includes(text)
         ) return true;
-
         for (let i = 1; i <= 20; i++) {
           if (
             meal[`strIngredient${i}`] &&
@@ -127,7 +125,7 @@ function App() {
   
   return (
     <div className="app-container">
-      <h1>🍽️ Meal Finder App</h1>
+      <h1>🍽️ Meal Finder</h1>
 
       <FilterBar
         searchText={searchText}
